@@ -13,7 +13,7 @@ function getUrl() {
         alert("请输入有效的网址");
         return;
     }
-    var apiUrl = 'http://jumps.test.upcdn.net/buildUrl.html?url=' + targetUrl);
+    var apiUrl = 'http://jumps.test.upcdn.net/buildUrl.html?url=' + encodeURIComponent(targetUrl);
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
