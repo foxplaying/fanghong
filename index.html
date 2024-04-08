@@ -13,7 +13,7 @@
 复制下方生成的链接，粘贴到微信或者QQ即可。</p>
 </header>
 <form id="signup-form" method="post">
-<input type="text" name="targetUrl" id="targetUrl" placeholder="需要跳转的网址" />
+<input type="text" name="targetUrl" id="targetUrl" placeholder="需要跳转的网址" onkeydown="handleKeyDown(event)"/>
 <input type="button" value="生成" onclick="buildUrl()" />
 </form>
 <p id="generatedUrl"></p>
