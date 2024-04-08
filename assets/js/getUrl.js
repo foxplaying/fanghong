@@ -7,7 +7,7 @@ function handleKeyDown(event) {
         geturl();
     }
 }
-function geturl() {
+function getUrl() {
     var targetUrl = document.getElementById('targetUrl').value;
     if (!isValidUrl(targetUrl)) {
         alert("请输入有效的网址");
