@@ -4,7 +4,7 @@ function isValidUrl(text) {
 function handleKeyDown(event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        buildUrl();
+        getUrl();
     }
 }
 function getUrl() {
