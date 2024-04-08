@@ -4,10 +4,10 @@ function isValidUrl(text) {
 function handleKeyDown(event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        getUrl();
+        geturl();
     }
 }
-function getUrl() {
+function geturl() {
     var targetUrl = document.getElementById('targetUrl').value;
     if (!isValidUrl(targetUrl)) {
         alert("请输入有效的网址");
