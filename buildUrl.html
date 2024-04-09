@@ -1,1 +1,41 @@
-<!DOCTYPE html><html><head></head><body></body><script src='//www.mc.sccc.top/js/buildUrl.js'></script></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content Example</title>
+</head>
+<body>
+    <!-- 在页面中创建一个元素用于显示动态数据 -->
+    <div id="result"></div>
+
+    <!-- 在页面底部引入JavaScript代码 -->
+    <script>
+        // 创建一个函数用于发送fetch请求并更新页面内容
+        function fetchData() {
+            // 发送fetch请求
+            fetch('https://xxmo.cn/api/dwz.php?url=https://example.com')
+                .then(response => response.json())
+                .then(data => {
+                    // 在收到响应后，将数据显示在页面元素中
+                    if (data.msg === "成功") {
+                        // 更新页面元素的内容为动态数据
+                        document.getElementById('result').textContent = "生成的防红链接：" + data.short_url;
+                    } else {
+                        // 如果生成失败，给出提示信息
+                        document.getElementById('result').textContent = "生成失败";
+                    }
+                })
+                .catch(error => {
+                    // 如果请求失败，显示错误信息
+                    console.error('Error:', error);
+                    document.getElementById('result').textContent = "生成失败";
+                });
+        }
+
+        // 在页面加载完毕后调用fetchData函数，发送fetch请求并更新页面内容
+        window.onload = fetchData;
+    </script>
+</body>
+</html>
+
