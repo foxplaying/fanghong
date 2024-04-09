@@ -3,50 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formatted Data</title>
+    <title>JSON Data</title>
 </head>
 <body>
     <script>
-        var formattedData = null; // 初始化变量
-    </script>
+        // 定义要返回的 JSON 数据
+        var jsonData = {
+            "msg": "成功",
+            "long_url": "http://example.com",
+            "short_url": "http://short.url"
+        };
 
-    <pre id="formattedData"></pre>
-
-    <script>
-        function getUrlParameter(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    var results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-}
-function isEnglish(str) {
-    return /^[A-Za-z]+$/.test(str);
-}
-var targetUrl = getUrlParameter('url');
-if (!targetUrl || isEnglish(targetUrl) || targetUrl.indexOf('.') === -1) {
-    formattedData = '{"msg": "失败"}';
-} else {
-    var apiUrl = 'https://xxmo.cn/api/dwz.php?url=' + encodeURIComponent('http://jumps.test.upcdn.net/jump.html?url=' + targetUrl);
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            if (data.msg === "成功") {
-                formattedData = JSON.stringify({
-                    "msg": data.msg,
-                    "long_url": targetUrl,
-                    "short_url": data.short_url
-                });
-            } else {
-                formattedData = JSON.stringify({
-                    "msg": "失败",
-                    "long_url": targetUrl
-                });
-            }
-            document.getElementById('formattedData').textContent = formattedData;
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+        // 输出 JSON 数据
+        console.log(jsonData);
     </script>
 </body>
 </html>
