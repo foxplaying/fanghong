@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>QQ、微信防红接口</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+<header id="header">
+<h1>QQ、微信防红接口</h1>
+<p>在下方输入需要跳转的链接，即可生成防红接口。<br>
+复制下方生成的链接，粘贴到微信或者QQ即可。</p>
+</header>
+<form id="signup-form" method="post">
+<input type="text" name="targetUrl" id="targetUrl" placeholder="需要跳转的网址" onkeydown="handleKeyDown(event)"/>
+<input type="button" value="生成" onclick="getUrl()" />
+</form>
+<p id="generatedUrl"></p>
+<footer id="footer">
+<ul class="icons">
+<li><a href="https://github.com/foxplaying/fanghong" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+</ul>
+<ul class="copyright">
+<li>&copy; Powered by <a href="https://www.mc.sccc.top/#webmaster" target="_blank">foxplaying</a></li>
+</ul>
+</footer>
+<script src="assets/js/getUrl.js"></script>
+</body>
+</html>
