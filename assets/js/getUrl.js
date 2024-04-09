@@ -27,3 +27,4 @@ fetch(apiUrl, { headers: { 'Content-Type': 'application/json' } })
         console.error('Error:', error);
         alert("生成失败");
     });
+}
