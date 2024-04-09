@@ -13,7 +13,7 @@ function getUrl() {
         alert("请输入有效的网址");
         return;
     }
-    var apiUrl = '//www.mc.sccc.top/js/buildUrl.js?url=' + encodeURIComponent(targetUrl);
+    var apiUrl = '../buildUrl.html?url=' + encodeURIComponent(targetUrl);
 fetch(apiUrl, {
     headers: {
         'Accept': 'application/json'
