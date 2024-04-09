@@ -6,16 +6,12 @@
     <title>JSON Data</title>
 </head>
 <body>
-    <!-- 使用 <script> 标签嵌入 JSON 数据 -->
-    <script type="application/json" id="jsonData">
-        {
-            "msg": "URL不能为空"
-        }
-    </script>
+    <!-- 使用 <script> 标签引用外部 JSON 文件 -->
+    <script src="data.json" type="application/json" id="jsonData"></script>
 
     <!-- 可以在页面中通过 JavaScript 访问并处理这个 JSON 数据 -->
     <script>
-        // 获取嵌入的 JSON 数据
+        // 获取引用的 JSON 数据
         var jsonData = JSON.parse(document.getElementById('jsonData').textContent);
         
         // 输出 JSON 数据
