@@ -6,14 +6,18 @@
     <title>JSON Data</title>
 </head>
 <body>
-    <script>
-        // 定义要返回的 JSON 数据
-        var jsonData = {
-            "msg": "成功",
-            "long_url": "http://example.com",
-            "short_url": "http://short.url"
-        };
+    <!-- 使用 <script> 标签嵌入 JSON 数据 -->
+    <script type="application/json" id="jsonData">
+        {
+            "msg": "URL不能为空"
+        }
+    </script>
 
+    <!-- 可以在页面中通过 JavaScript 访问并处理这个 JSON 数据 -->
+    <script>
+        // 获取嵌入的 JSON 数据
+        var jsonData = JSON.parse(document.getElementById('jsonData').textContent);
+        
         // 输出 JSON 数据
         console.log(jsonData);
     </script>
