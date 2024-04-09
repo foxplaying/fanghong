@@ -13,18 +13,17 @@ function getUrl() {
         alert("请输入有效的网址");
         return;
     }
-    var apiUrl = '../buildUrl.html?url=' + encodeURIComponent(targetUrl);
-fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            if (data.msg === "成功") {
-                document.getElementById('generatedUrl').textContent = "生成的防红链接：" + data.short_url;
-            } else {
-                alert("生成失败");
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
+var apiUrl = '../buildUrl.html?url=' + encodeURIComponent(targetUrl);
+fetch(apiUrl, { headers: { 'Content-Type': 'application/json' } })
+    .then(response => response.json())
+    .then(data => {
+        if (data.msg === "成功") {
+            document.getElementById('generatedUrl').textContent = "生成的防红链接：" + data.short_url;
+        } else {
             alert("生成失败");
-        });
-}
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("生成失败");
+    });
