@@ -14,11 +14,7 @@ function getUrl() {
         return;
     }
     var apiUrl = '../buildUrl.html?url=' + encodeURIComponent(targetUrl);
-fetch(apiUrl, {
-    headers: {
-        'Accept': 'application/json'
-    }
-})
+fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
             if (data.msg === "成功") {
