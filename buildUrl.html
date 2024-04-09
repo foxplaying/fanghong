@@ -13,8 +13,42 @@
 
     <pre id="formattedData"></pre>
 
-    <!-- 引入 JavaScript 文件 -->
-    <script src="//www.mc.sccc.top/js/buildUrl.js"></script>
+    <script>
+        function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+function isEnglish(str) {
+    return /^[A-Za-z]+$/.test(str);
+}
+var targetUrl = getUrlParameter('url');
+if (!targetUrl || isEnglish(targetUrl) || targetUrl.indexOf('.') === -1) {
+    formattedData = '{"msg": "失败"}';
+} else {
+    var apiUrl = 'https://xxmo.cn/api/dwz.php?url=' + encodeURIComponent('http://jumps.test.upcdn.net/jump.html?url=' + targetUrl);
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            if (data.msg === "成功") {
+                formattedData = JSON.stringify({
+                    "msg": data.msg,
+                    "long_url": targetUrl,
+                    "short_url": data.short_url
+                });
+            } else {
+                formattedData = JSON.stringify({
+                    "msg": "失败",
+                    "long_url": targetUrl
+                });
+            }
+            document.getElementById('formattedData').textContent = formattedData;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    </script>
 </body>
 </html>
 
