@@ -60,19 +60,14 @@
         window.setTimeout(function() {
             $body.classList.remove('is-preload');
         }, 100);
-    });
+    })();
     (function() {
         var settings = {
-            images: {backgroundImageUrl},
+            images: {
+                'https://moe.jitsu.top/img/?sort=pc&timestamp=' + new Date().getTime(): 'center'
+            },
             delay: 6000
         };
-        function updateBackgroundImage() {
-            var timestamp = new Date().getTime();
-            var backgroundImageUrl = 'https://moe.jitsu.top/img/?sort=pc&timestamp=' + timestamp;
-        }
-        updateBackgroundImage();
-        setInterval(updateBackgroundImage, settings.delay);
-        
         var pos = 0,
             lastPos = 0,
             $wrapper, $bgs = [],
