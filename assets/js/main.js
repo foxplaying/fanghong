@@ -40,16 +40,20 @@
             }
         }, window.DOMTokenList = t, n(Element.prototype, "classList", function() {
             return new t(this)
-        })
+        });
+
+        // Polyfill for addEventListener
+        if (!("addEventListener" in window)) {
+            window.addEventListener = function(type, f) {
+                window.attachEvent("on" + type, f)
+            }
+        }
     }();
     window.canUse = function(p) {
         if (!window._canUse) window._canUse = document.createElement("div");
         var e = window._canUse.style,
             up = p.charAt(0).toUpperCase() + p.slice(1);
         return p in e || "Moz" + up in e || "Webkit" + up in e || "O" + up in e || "ms" + up in e
-    };
-    window.addEventListener = function(type, f) {
-        window.attachEvent("on" + type, f)
     };
     window.addEventListener('load', function() {
         window.setTimeout(function() {
