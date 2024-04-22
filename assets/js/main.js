@@ -63,11 +63,10 @@
 	});
 	(function() {
 		var settings = {
-			images: {
-				'https://moe.jitsu.top/img/?sort=pc&timestamp=' + new Date().getTime(): 'center',
-			},
+			images: {},
 			delay: 6000
 		};
+		settings.images['https://moe.jitsu.top/img/?sort=pc&timestamp=' + new Date().getTime()] = 'center';
 		var pos = 0,
 			lastPos = 0,
 			$wrapper, $bgs = [],
