@@ -1,7 +1,7 @@
 (function() {
     "use strict";
     var $body = document.querySelector('body');
-    
+
     // Polyfill for classList and addEventListener
     function DOMTokenList(t) {
         this.el = t;
@@ -43,7 +43,7 @@
             return new DOMTokenList(this);
         });
     }
-    
+
     // Check for browser support
     window.canUse = function(p) {
         if (!window._canUse) window._canUse = document.createElement("div");
@@ -51,33 +51,34 @@
             up = p.charAt(0).toUpperCase() + p.slice(1);
         return p in e || "Moz" + up in e || "Webkit" + up in e || "O" + up in e || "ms" + up in e;
     };
-    
+
     // Polyfill for addEventListener
     if (!("addEventListener" in window)) {
         window.addEventListener = function(type, f) {
             window.attachEvent("on" + type, f);
         };
     }
-    
+
     // Remove 'is-preload' class when page is loaded
     window.addEventListener('load', function() {
         window.setTimeout(function() {
             $body.classList.remove('is-preload');
         }, 100);
     });
-    
+
     // Function to update background image
     function updateBackgroundImage() {
         var timestamp = new Date().getTime();
         var backgroundImageUrl = 'https://moe.jitsu.top/img/?sort=pc&timestamp=' + timestamp;
         document.body.style.backgroundImage = 'url("' + backgroundImageUrl + '")';
     }
-    
+
     // Initial call to update background image
     updateBackgroundImage();
-    
+
     // Interval to periodically update background image
     setInterval(updateBackgroundImage, 6000);
-    
+
     // Other code...
+
 })();
