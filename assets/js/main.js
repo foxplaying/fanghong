@@ -34,7 +34,8 @@
         function updateBackgroundImage() {
             $bgs[lastPos].classList.remove('top');
             pos = (pos + 1) % $bgs.length;
-            $bgs[pos].style.backgroundImage = 'url("https://moe.jitsu.top/img/?sort=pc&t=' + new Date().getTime() + '")';
+            var newImageUrl = 'https://moe.jitsu.top/img/?sort=pc&t=' + new Date().getTime();
+            $bgs[pos].style.backgroundImage = 'url("' + newImageUrl + '")';
             $bgs[pos].classList.add('visible');
             $bgs[pos].classList.add('top');
             window.setTimeout(function() {
