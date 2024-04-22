@@ -64,7 +64,7 @@
     (function() {
         var settings = {
             images: {
-                'https://moe.jitsu.top/img/?sort=pc&timestamp': new Date().getTime(): 'center'
+                'https://moe.jitsu.top/img/?sort=pc&timestamp': new Date().getTime()
             },
             delay: 6000
         };
