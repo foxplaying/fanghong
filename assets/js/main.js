@@ -67,6 +67,7 @@
 			delay: 6000
 		};
                 settings.images['https://moe.jitsu.top/img/?sort=pc&random=' + Math.random()] = 'center';
+                settings.images['https://moe.jitsu.top/img/?sort=pc&random=' + Math.random()] = 'center';
 		var pos = 0,
 			lastPos = 0,
 			$wrapper, $bgs = [],
