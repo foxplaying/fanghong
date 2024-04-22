@@ -64,7 +64,7 @@
 	(function() {
 		var settings = {
 			images: {},
-			delay: 6000
+			delay: 7000
 		};
                 for (var i = 0; i < 10; i++) {
                 settings.images['https://moe.jitsu.top/img/?sort=pc&random=' + Math.random()] = 'center';
