@@ -63,12 +63,12 @@
     });
     (function() {
         var settings = {
+            images: {backgroundImageUrl},
             delay: 6000
         };
         function updateBackgroundImage() {
             var timestamp = new Date().getTime();
             var backgroundImageUrl = 'https://moe.jitsu.top/img/?sort=pc&timestamp=' + timestamp;
-            document.body.style.backgroundImage = 'url("' + backgroundImageUrl + '")';
         }
         updateBackgroundImage();
         setInterval(updateBackgroundImage, settings.delay);
@@ -80,11 +80,13 @@
         $wrapper = document.createElement('div');
         $wrapper.id = 'bg';
         $body.appendChild($wrapper);
-        var backgroundImageUrl = 'https://moe.jitsu.top/img/?sort=pc&timestamp=' + new Date().getTime();
-        $bg = document.createElement('div');
-        $bg.style.backgroundImage = 'url("' + backgroundImageUrl + '")';
-        $wrapper.appendChild($bg);
-        $bgs.push($bg);
+        for (k in settings.images) {
+            $bg = document.createElement('div');
+            $bg.style.backgroundImage = 'url("' + k + '")';
+            $bg.style.backgroundPosition = settings.images[k];
+            $wrapper.appendChild($bg);
+            $bgs.push($bg);
+        }
         $bgs[pos].classList.add('visible');
         $bgs[pos].classList.add('top');
         if ($bgs.length == 1 || !canUse('transition'))
