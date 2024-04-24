@@ -17,11 +17,11 @@
         scriptElement.onload = function () {
             mqq.device.isMobileQQ(function(result){
                 if (result === true || navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1 ) {
-                   fetch(urlParameterValue)
-                        .then(response => response.text())
-                        .then(html => {
-                            document.body.innerHTML = html;
-                        }); 
+                   var iframe = document.createElement('iframe');
+iframe.src = urlParameterValue;
+iframe.width = "100%";
+iframe.height = "500px";
+document.body.appendChild(iframe);
                 } else {
                     if (!/^https?:\/\//i.test(urlParameterValue)) {
                         urlParameterValue = 'http://' + urlParameterValue;
