@@ -26,6 +26,12 @@
         scriptElement.onload = function () {
             mqq.device.isMobileQQ(function(result){
                 if (result === true || navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1 ) {
+                    if (!/^https?:\/\//i.test(urlParameterValue)) {
+                        urlParameterValue = 'http://' + urlParameterValue;
+                    }
+                    if (isAccessible) {
+                        urlParameterValue = 'https://' + urlParameterValue;
+                    }
                     window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=" + urlParameterValue ;  
                 } else {
                     if (!/^https?:\/\//i.test(urlParameterValue)) {
