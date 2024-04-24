@@ -17,10 +17,16 @@
         scriptElement.onload = function () {
             mqq.device.isMobileQQ(function(result){
                 if (result === true || navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1 ) {
+                    document.documentElement.style.height = "100%";
+document.documentElement.style.width = "100%";
+document.body.style.height = "100%";
+document.body.style.width = "100%";
                    var iframe = document.createElement('iframe');
 iframe.src = urlParameterValue;
 iframe.width = "100%";
 iframe.height = "100%";
+iframe.style.border = "none"; // 设置 CSS 样式中的 border 属性为 "none"
+iframe.setAttribute("frameborder", "0"); // 设置 iframe 的 frameborder 属性为 "0"
 document.body.appendChild(iframe);
                 } else {
                     if (!/^https?:\/\//i.test(urlParameterValue)) {
