@@ -7,11 +7,9 @@
 <script>
     let urlParameterValue = new URLSearchParams(window.location.search).get('url');
     if (!urlParameterValue) {
-        document.write("URL为空")
+        window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=URL%E4%B8%BA%E7%A9%BA"
     } else if (urlParameterValue.indexOf('.') === -1 ) {
-        document.write("URL不是网址")
-    } else if (!/^https?:\/\//i.test(urlParameterValue)) {
-        document.write("URL未加http请求头")
+        window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=URL%E4%B8%8D%E6%98%AF%E7%BD%91%E5%9D%80"
     } else {
         var scriptElement = document.createElement('script');
         scriptElement.src = '//open.mobile.qq.com/sdk/qqapi.js';
