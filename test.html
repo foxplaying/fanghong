@@ -7,28 +7,28 @@
 <script>
     let urlParameterValue = new URLSearchParams(window.location.search).get('url');
     if (!urlParameterValue) {
-    document.write("URL为空")
-} else if (urlParameterValue.indexOf('.') === -1 ) {
-    document.write("URL不是网址")
-    } if (!/^https?:\/\//i.test(urlParameterValue)) {
-document.write("URL未加http请求头")
+        document.write("URL为空");
+    } else if (urlParameterValue.indexOf('.') === -1) {
+        document.write("URL不是网址");
+    } else if (!/^https?:\/\//i.test(urlParameterValue)) {
+        document.write("URL未加http请求头");
     } else {
-    var scriptElement = document.createElement('script');
-    scriptElement.src = '//open.mobile.qq.com/sdk/qqapi.js';
-    document.head.appendChild(scriptElement);
-    scriptElement.onload = function () {
-        mqq.device.isMobileQQ(function(result){
-            if (result === true || navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1 ) {
-                window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=" + urlParameterValue ;  
-            } else {
-                if (!/^https?:\/\//i.test(urlParameterValue)) {
-                    urlParameterValue = 'http://' + urlParameterValue;
+        var scriptElement = document.createElement('script');
+        scriptElement.src = '//open.mobile.qq.com/sdk/qqapi.js';
+        document.head.appendChild(scriptElement);
+        scriptElement.onload = function () {
+            mqq.device.isMobileQQ(function(result){
+                if (result === true || navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1 ) {
+                    window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=" + urlParameterValue ;  
+                } else {
+                    if (!/^https?:\/\//i.test(urlParameterValue)) {
+                        urlParameterValue = 'http://' + urlParameterValue;
+                    }
+                    document.title = "跳转中...";
+                    window.location.href = urlParameterValue;
                 }
-                document.title = "跳转中...";
-                window.location.href = urlParameterValue;
-            }
-        });
+            });
+        }
     }
-}
 </script>
 </html>
