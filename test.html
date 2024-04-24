@@ -10,11 +10,11 @@
     document.head.appendChild(metaCharset);
     let urlParameterValue = new URLSearchParams(window.location.search).get('url');
     if (!urlParameterValue) {
-        document.write("URL为空")
+        document.write(decodeURIComponent("URL为空"))
     } else if (urlParameterValue.indexOf('.') === -1 ) {
-        document.write("URL不是网址")
+        document.write(decodeURIComponent("URL不是网址"))
     } else if (!/^https?:\/\//i.test(urlParameterValue)) {
-        document.write("URL未加http请求头")
+        document.write(decodeURIComponent("URL未加http请求头"))
     } else {
         var scriptElement = document.createElement('script');
         scriptElement.src = '//open.mobile.qq.com/sdk/qqapi.js';
