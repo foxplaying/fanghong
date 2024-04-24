@@ -5,7 +5,7 @@
 <body>
 </body>
 <script>
-    const urlParameterValue = new URLSearchParams(window.location.search).get('url');
+    let urlParameterValue = new URLSearchParams(window.location.search).get('url');
     var scriptElement = document.createElement('script');
     scriptElement.src = '//open.mobile.qq.com/sdk/qqapi.js';
     document.head.appendChild(scriptElement);
