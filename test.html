@@ -15,6 +15,9 @@
             if (result === true || ua.toLowerCase().indexOf('micromessenger') !== -1 ) {
                 window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=" + urlParameterValue ;  
             } else {
+                if (!urlParameterValue.startsWith('http://') && !urlParameterValue.startsWith('https://')) {
+                    urlParameterValue = 'http://' + urlParameterValue;
+                }
                 document.title = "跳转中...";
                 window.location.href = urlParameterValue;
             }
