@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+    const urlParameterValue = new URLSearchParams(window.location.search).get('url');
+    var scriptElement = document.createElement('script');
+    scriptElement.src = '//open.mobile.qq.com/sdk/qqapi.uncompressed.js';
+    document.head.appendChild(scriptElement);
+    scriptElement.onload = function () {
+        mqq.device.isMobileQQ(function(result){
+            var ua = navigator.userAgent;
+            if (result === true || ua.toLowerCase().indexOf('micromessenger') !== -1 ) {
+                window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=" + urlParameterValue ;  
+            } else {
+                document.title = "跳转中...";
+                window.location.href = urlParameterValue;
+            }
+        });
+    }
+</script>
+</html>
