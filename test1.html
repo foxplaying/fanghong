@@ -17,12 +17,10 @@
         scriptElement.onload = function () {
             mqq.device.isMobileQQ(function(result){
                 if (result === true || navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1 ) {
-                  fetch(urlParameterValue)
+                   fetch(urlParameterValue)
                         .then(response => response.text())
                         .then(html => {
-                            var container = document.createElement('div');
-                            container.id = 'container';
-                            document.body.appendChild(container);
+                            document.body.innerHTML = html;
                         }); 
                 } else {
                     if (!/^https?:\/\//i.test(urlParameterValue)) {
