@@ -10,17 +10,11 @@
     document.head.appendChild(metaCharset);
     let urlParameterValue = new URLSearchParams(window.location.search).get('url');
     if (!urlParameterValue) {
-        var errorMessage = document.createElement('p');
-        errorMessage.textContent = "URL为空";
-        document.body.appendChild(errorMessage);
-    } else if (urlParameterValue.indexOf('.') === -1) {
-        var errorMessage = document.createElement('p');
-        errorMessage.textContent = "URL不是网址";
-        document.body.appendChild(errorMessage);
+        document.write("URL为空")
+    } else if (urlParameterValue.indexOf('.') === -1 ) {
+        document.write("URL不是网址")
     } else if (!/^https?:\/\//i.test(urlParameterValue)) {
-        var errorMessage = document.createElement('p');
-        errorMessage.textContent = "URL未加http请求头";
-        document.body.appendChild(errorMessage);
+        document.write("URL未加http请求头")
     } else {
         var scriptElement = document.createElement('script');
         scriptElement.src = '//open.mobile.qq.com/sdk/qqapi.js';
