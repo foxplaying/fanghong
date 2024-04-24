@@ -6,21 +6,39 @@
 </body>
 <script>
     let urlParameterValue = new URLSearchParams(window.location.search).get('url');
-    var scriptElement = document.createElement('script');
-    scriptElement.src = '//open.mobile.qq.com/sdk/qqapi.js';
-    document.head.appendChild(scriptElement);
-    scriptElement.onload = function () {
-        mqq.device.isMobileQQ(function(result){
-            if (result === true || navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1 ) {
-                window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=" + urlParameterValue ;  
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', urlParameterValue);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status >= 200 && xhr.status < 400) {
+                var isAccessible = true; 
             } else {
-                if (!/^https?:\/\//i.test(urlParameterValue)) {
-                    urlParameterValue = 'http://' + urlParameterValue;
-                }
-                document.title = "跳转中...";
-                window.location.href = urlParameterValue;
+                var isAccessible = false; 
             }
-        });
+            handleAccessibility(isAccessible);
+        }
+    };
+    xhr.send();
+    function handleAccessibility(isAccessible) {
+        var scriptElement = document.createElement('script');
+        scriptElement.src = '//open.mobile.qq.com/sdk/qqapi.js';
+        document.head.appendChild(scriptElement);
+        scriptElement.onload = function () {
+            mqq.device.isMobileQQ(function(result){
+                if (result === true || navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1 ) {
+                    window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=" + urlParameterValue ;  
+                } else {
+                    if (!/^https?:\/\//i.test(urlParameterValue)) {
+                        urlParameterValue = 'http://' + urlParameterValue;
+                    }
+                    if (isAccessible) {
+                        urlParameterValue = 'https://' + urlParameterValue;
+                    }
+                    document.title = "跳转中...";
+                    window.location.href = urlParameterValue;
+                }
+            });
+        }
     }
 </script>
 </html>
