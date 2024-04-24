@@ -5,6 +5,9 @@
 <body>
 </body>
 <script>
+    var metaCharset = document.createElement('meta');
+    metaCharset.setAttribute('charset', 'UTF-8');
+    document.head.appendChild(metaCharset);
     let urlParameterValue = new URLSearchParams(window.location.search).get('url');
     if (!urlParameterValue) {
         document.write("URL为空");
