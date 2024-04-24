@@ -7,14 +7,14 @@
 <script>
     const urlParameterValue = new URLSearchParams(window.location.search).get('url');
     var scriptElement = document.createElement('script');
-    scriptElement.src = '//open.mobile.qq.com/sdk/qqapi.js';
+    scriptElement.src = '//open.mobile.qq.com/sdk/qqapi.uncompressed.js';
     document.head.appendChild(scriptElement);
     scriptElement.onload = function () {
         mqq.device.isMobileQQ(function(result){
             if (result === true || navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1 ) {
                 window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=" + urlParameterValue ;  
             } else {
-                if (!urlParameterValue.startsWith('http://') && !urlParameterValue.startsWith('https://')) {
+                if (!/^https?:\/\//i.test(urlParameterValue)) {
                     urlParameterValue = 'http://' + urlParameterValue;
                 }
                 document.title = "跳转中...";
