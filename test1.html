@@ -6,10 +6,18 @@
 </body>
 <script>
     let urlParameterValue = new URLSearchParams(window.location.search).get('url');
+    var parser = document.createElement('a');
+    parser.href = document.URL;
+    var pathname = parser.pathname;
+    var hostname = parser.hostname;
+    var parts = pathname.replace(/\/[^\/]*$/, '/');
+    var topLevelPath = '/' + parts[1];
     if (!urlParameterValue) {
         window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=URL%E4%B8%BA%E7%A9%BA"
     } else if (!/[\d\w\u4e00-\u9fa5][\d\w\u4e00-\u9fa5]*\.[\d\w\u4e00-\u9fa5][\d\w\u4e00-\u9fa5]*/.test(urlParameterValue)) {
         window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=URL%E4%B8%8D%E6%98%AF%E7%BD%91%E5%9D%80"
+    } else if (urlParameterValue.indexOf(hostname + topLevelPath) !== -1 ) {
+        window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=%E5%A5%97%E5%A8%83%E5%A5%BD%E7%8E%A9%E5%90%97"
     } else {
     if (!/^https?:\/\//i.test(urlParameterValue)) {
          urlParameterValue = 'http://' + urlParameterValue;
