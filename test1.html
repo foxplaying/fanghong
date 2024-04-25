@@ -35,10 +35,9 @@
                     iframe.style.border = "none"; 
                     iframe.setAttribute("frameborder", "0"); 
                     document.body.appendChild(iframe);
-                    iframe.onload = function() {
                     var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
                     document.title = iframeDocument.title;
-                    };} else {
+                    } else {
                     document.title = "跳转中...";
                     window.location.href = urlParameterValue;
                 }
