@@ -11,6 +11,9 @@
     } else if (urlParameterValue.indexOf('.') === -1 ) {
         window.location.href = "https://c.pc.qq.com/middleb.html?pfurl=URL%E4%B8%8D%E6%98%AF%E7%BD%91%E5%9D%80"
     } else {
+    if (!/^https?:\/\//i.test(urlParameterValue)) {
+         urlParameterValue = 'http://' + urlParameterValue;
+    }
         var scriptElement = document.createElement('script');
         scriptElement.src = '//open.mobile.qq.com/sdk/qqapi.js';
         document.head.appendChild(scriptElement);
@@ -18,28 +21,21 @@
             mqq.device.isMobileQQ(function(result){
                 if (result === true || navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1 ) {
                     var viewportMeta = document.createElement('meta');
-
-// 设置 <meta> 元素的属性
-viewportMeta.setAttribute('name', 'viewport');
-viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
-
-// 将 <meta> 元素添加到文档的 head 部分
-document.head.appendChild(viewportMeta);
+                    viewportMeta.setAttribute('name', 'viewport');
+                    viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+                    document.head.appendChild(viewportMeta);
                     document.documentElement.style.height = "100%";
-document.documentElement.style.width = "100%";
-document.body.style.height = "100%";
-document.body.style.width = "100%";
+                    document.documentElement.style.width = "100%";
+                    document.body.style.height = "100%";
+                    document.body.style.width = "100%";
                    var iframe = document.createElement('iframe');
-iframe.src = urlParameterValue;
-iframe.width = "100%";
-iframe.height = "100%";
-iframe.style.border = "none"; // 设置 CSS 样式中的 border 属性为 "none"
-iframe.setAttribute("frameborder", "0"); // 设置 iframe 的 frameborder 属性为 "0"
-document.body.appendChild(iframe);
+                   iframe.src = urlParameterValue;
+                   iframe.width = "100%";
+                   iframe.height = "100%";
+                   iframe.style.border = "none"; // 设置 CSS 样式中的 border 属性为 "none"
+                   iframe.setAttribute("frameborder", "0"); // 设置 iframe 的 frameborder 属性为 "0"
+                   document.body.appendChild(iframe);
                 } else {
-                    if (!/^https?:\/\//i.test(urlParameterValue)) {
-                        urlParameterValue = 'http://' + urlParameterValue;
-                    }
                     document.title = "跳转中...";
                     window.location.href = urlParameterValue;
                 }
