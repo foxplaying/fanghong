@@ -35,8 +35,7 @@
                     iframe.style.border = "none"; 
                     iframe.setAttribute("frameborder", "0"); 
                     document.body.appendChild(iframe);
-                    var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-                    document.title = iframeDocument.title;
+                    document.title = urlParameterValue;
                     } else {
                     document.title = "跳转中...";
                     window.location.href = urlParameterValue;
