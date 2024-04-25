@@ -17,6 +17,14 @@
         scriptElement.onload = function () {
             mqq.device.isMobileQQ(function(result){
                 if (result === true || navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1 ) {
+                    var viewportMeta = document.createElement('meta');
+
+// 设置 <meta> 元素的属性
+viewportMeta.setAttribute('name', 'viewport');
+viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+
+// 将 <meta> 元素添加到文档的 head 部分
+document.head.appendChild(viewportMeta);
                     document.documentElement.style.height = "100%";
 document.documentElement.style.width = "100%";
 document.body.style.height = "100%";
