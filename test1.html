@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>执行加密后的 JavaScript 文件</title>
+</head>
+<body>
+
+<script>
+// 加密后的代码
+const encryptedCode = `(function(){
+    alert("6")
+})();`;
+
+// 创建 script 标签
+const script = document.createElement('script');
+script.type = 'text/javascript';
+
+// 将加密后的代码作为 script 标签的内容
+script.textContent = encryptedCode;
+
+// 将 script 标签添加到页面中，这样其中的 JavaScript 代码就会执行
+document.body.appendChild(script);
+</script>
+
+</body>
+</html>
