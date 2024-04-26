@@ -24,7 +24,7 @@ var obfuscationResult = JavaScriptObfuscator.obfuscate(
 );
 
 const encryptedCode = obfuscationResult.getObfuscatedCode();
-
+console.log(obfuscationResult.getObfuscatedCode());
 // 创建 script 标签
 const script = document.createElement('script');
 script.type = 'text/javascript';
