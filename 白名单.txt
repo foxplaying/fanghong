@@ -1,3 +1,4 @@
+openurl.zeabur.app
 loadurl.zeabur.app
 visiturl.zeabur.app
 gotourl.zeabur.app
