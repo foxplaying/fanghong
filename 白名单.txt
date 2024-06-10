@@ -4,6 +4,7 @@ visiturl.zeabur.app
 gotourl.zeabur.app
 jumping.zeabur.app
 jumps.zeabur.app
+loadurl.qtvpn.com
 jumps.qtvpn.com
 wmk.jili5.cn
 zl.97sq.com
