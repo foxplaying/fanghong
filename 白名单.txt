@@ -1,7 +1,4 @@
 openurl.zeabur.app
-loadurl.zeabur.app
-visiturl.zeabur.app
-gotourl.zeabur.app
 jumping.zeabur.app
 jumps.zeabur.app
 urls.zeabur.app
