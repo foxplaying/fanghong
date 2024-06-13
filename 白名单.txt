@@ -2,7 +2,10 @@ openurl.zeabur.app
 jumping.zeabur.app
 jumps.zeabur.app
 urls.zeabur.app
+urln.pages.dev
+jurl.pages.dev
 fhurls1.mxskqw.cn
+openurl.pages.dev
 loadurl.qtvpn.com
 jumps.qtvpn.com
 wmk.jili5.cn
