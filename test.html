@@ -9,12 +9,11 @@
     <button onclick="getUrl()">Fetch Short URL</button>
 
     <script>
-        
-         function fetchShortUrl(url, method = 'GET') {
+function fetchShortUrl(url, method = 'GET') {
     const fetchOptions = {
-        method: method,
+        method: type === 'post' ? 'POST' : 'GET',
         headers: {
-            'Content-Type': 'application/json' 
+            'Content-Type': 'application/json'
         }
     };
     return fetch(url, fetchOptions)
