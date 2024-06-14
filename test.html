@@ -38,7 +38,7 @@ function fetchShortUrl(url, method = 'GET') {
 }
 var apiUrl ="http://www.baidu.com"
 //var urlshare = 'https://www.urlshare.cn/umirror_url_check?_wv=313270&url=' + apiUrl;
-var shortApiUrl = 'https://link.97sq.com/api/set.php?url=' + encodeURIComponent(apiUrl);
+var shortApiUrl = 'https://link.97sq.com/api/set.php' + encodeURIComponent(apiUrl);
 //var spareShortApiUrl = 'https://t.apii.cn/?url=' + encodeURIComponent(apiUrl);
 var spareShortApiUrl = 'https://xxmo.cn/api/dwz.php?url=' + encodeURIComponent(apiUrl)
 var spareSecondShortApiUrl = 'https://tools.mgtv100.com/external/v1/short_urls?url=' + encodeURIComponent(apiUrl);
