@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Short URL Example</title>
+</head>
+<body>
+    <button onclick="getUrl()">Fetch Short URL</button>
+
+    <script>
+         function fetchShortUrl(url, method = 'GET') {
+    const fetchOptions = {
+        method: method,
+        headers: {
+            'Content-Type': 'application/json' 
+        }
+    };
+    return fetch(url, fetchOptions)
+        .then(response => response.json())
+        .then(data => {
+            if (data.msg === "成功") {
+                return data.short_url;
+            } else if (data.success === "true") {
+                return data.content;
+            } else if (data.msg === "ok") {
+                return data.url;
+            } else if (data.status === "success") {
+                return data.data.short_url;
+            } else {
+                throw new Error("Short URL generation failed.");
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            throw error;
+        });
+}
+//var urlshare = 'https://www.urlshare.cn/umirror_url_check?_wv=313270&url=' + apiUrl;
+var shortApiUrl = 'https://link.97sq.com/api/set.php?url=' + encodeURIComponent(apiUrl);
+//var spareShortApiUrl = 'https://t.apii.cn/?url=' + encodeURIComponent(apiUrl);
+var spareShortApiUrl = 'https://xxmo.cn/api/dwz.php?url=' + encodeURIComponent(apiUrl)
+var spareSecondShortApiUrl = 'https://tools.mgtv100.com/external/v1/short_urls?url=' + encodeURIComponent(apiUrl);
+fetchShortUrl(shortApiUrl, 'POST') 
+    .then(shortUrl => getapiUrl(shortUrl))
+    .catch(() => {
+        fetchShortUrl(spareShortApiUrl) 
+            .then(shortUrl => getapiUrl(shortUrl))
+            .catch(() => {
+                fetchShortUrl(spareSecondShortApiUrl) 
+                    .then(shortUrl => getapiUrl(shortUrl))
+                    .catch(() => getapiUrl(apiUrl)); 
+            });
+      });
+        function getapiUrl(shortUrl) {
+            console.log('Shortened URL:', shortUrl);
+            // Further processing logic here
+        }
+    </script>
+</body>
+</html>
