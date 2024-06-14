@@ -22,10 +22,14 @@
 <form id="signup-form" method="post">
 <input type="url" name="targetUrl" id="targetUrl" placeholder="需要跳转的网址" onkeydown="handleKeyDown(event)"/>
 <select name="type" class="btn-default form-control" style="width: auto;cursor:pointer" title="点击选择跳转类型" id="type">
-<option value="0">微信/QQ直链打开</option><option value="1">微信/QQ跳浏览器</option><option value="2">微信/QQ直链打开-备用</option><option value="1">微信/QQ跳浏览器-备用</option>
+<option value="0">微信/QQ直链打开</option><option value="1">微信/QQ跳浏览器</option><option value="2">微信/QQ直链打开-备用</option><option value="3">微信/QQ跳浏览器-备用</option>
 </select>
 <input type="button" value="生成" onclick="getUrl()" />
 </form>
+<div style="display: flex;align-items: center;">
+<input type="checkbox" name="agree" id="agree" style="width: 16px;height: 16px;display: inline-block;" checked>
+<label for="agree" style="margin: 0 16px;">启用短链接
+</label></div>
 <p id="generatedUrl"></p>
 <footer id="footer">
 <ul class="icons">
