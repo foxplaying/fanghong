@@ -23,7 +23,7 @@
             if (data.msg === "成功") {
                 return data.short_url;
             } else if (data.success === "true") {
-                return data.content;
+                return data.content.url;
             } else if (data.msg === "ok") {
                 return data.url;
             } else if (data.status === "success") {
