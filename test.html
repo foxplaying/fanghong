@@ -9,33 +9,39 @@
     <button onclick="getUrl()">Fetch Short URL</button>
 
     <script>
-function fetchShortUrl(url, method = 'GET') {
-    const fetchOptions = {
-        method: type === 'post' ? 'POST' : 'GET',
-        headers: {
-            'Content-Type': 'application/json'
+        function fetchShortUrl(url, method = 'GET') {
+            const fetchOptions = {
+                method: method === 'POST' ? 'POST' : 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            };
+
+            return fetch(url, fetchOptions)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.msg === "成功") {
+                        return data.short_url;
+                    } else if (data.success === "true") {
+                        return data.content.url;
+                    } else if (data.msg === "ok") {
+                        return data.url;
+                    } else if (data.status === "success") {
+                        return data.data.short_url;
+                    } else {
+                        throw new Error("Short URL generation failed.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    throw error; 
+                });
         }
-    };
-    return fetch(url, fetchOptions)
-        .then(response => response.json())
-        .then(data => {
-            if (data.msg === "成功") {
-                return data.short_url;
-            } else if (data.success === "true") {
-                return data.content.url;
-            } else if (data.msg === "ok") {
-                return data.url;
-            } else if (data.status === "success") {
-                return data.data.short_url;
-            } else {
-                throw new Error("Short URL generation failed.");
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            throw error;
-        });
-}
 var apiUrl ="http://www.baidu.com"
 //var urlshare = 'https://www.urlshare.cn/umirror_url_check?_wv=313270&url=' + apiUrl;
 var shortApiUrl = 'https://link.97sq.com/api/set.php?url=' + encodeURIComponent(apiUrl);
