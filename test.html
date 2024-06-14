@@ -9,6 +9,7 @@
     <button onclick="getUrl()">Fetch Short URL</button>
 
     <script>
+        
          function fetchShortUrl(url, method = 'GET') {
     const fetchOptions = {
         method: method,
@@ -36,6 +37,7 @@
             throw error;
         });
 }
+var apiUrl ="http://www.baidu.com"
 //var urlshare = 'https://www.urlshare.cn/umirror_url_check?_wv=313270&url=' + apiUrl;
 var shortApiUrl = 'https://link.97sq.com/api/set.php?url=' + encodeURIComponent(apiUrl);
 //var spareShortApiUrl = 'https://t.apii.cn/?url=' + encodeURIComponent(apiUrl);
