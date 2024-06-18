@@ -12,15 +12,8 @@
     <button onclick="getUrl()">Fetch Short URL</button>
 
     <script>
- function updateMetaTags(title, desc) {
             $("meta[itemprop='name']").attr('content', title);
             $("meta[itemprop='description']").attr('content', desc);
-        }
-        $(document).ready(function() {
-            var newTitle = "新的分享标题";
-            var newDesc = "新的分享内容";
-            updateMetaTags(newTitle, newDesc);
-        });
 function fetchShortUrl(url, method = 'GET') {
     const fetchOptions = {
         method: method,
