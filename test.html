@@ -12,8 +12,28 @@
     <button onclick="getUrl()">Fetch Short URL</button>
 
     <script>
+ function updateMetaTags(title, desc) {
             $("meta[itemprop='name']").attr('content', title);
             $("meta[itemprop='description']").attr('content', desc);
+        }
+
+        $(document).ready(function() {
+            var newTitle = "新的分享标题";
+            var newDesc = "新的分享内容";
+            updateMetaTags(newTitle, newDesc);
+        });
+    if (mqq && mqq.platform.indexOf('AndroidQQ') != -1) {
+  // AndroidQQ 在域名为.cc下分享无法配置，QQ分享配置监听不了Vue路由变化，即 #后面的变化并不会让 QQWebview 改变分享配置，所以Android这样处理 index.html?1=1 可刷新分享配置
+  let url = window.location.href.split('index.html')[0] + 'index.html?1=1#/hello?a=1'
+  window.location.href = url
+} else {
+  this.$router.push({
+    path: '/hello',
+    query: {
+      a: 1
+    }
+  })
+}
 function fetchShortUrl(url, method = 'GET') {
     const fetchOptions = {
         method: method,
