@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta itemprop="name" content="这是分享的标题"/>
-    <meta name="description" itemprop="description" content="这是要分享的内容" />
-    <meta itemprop="image" content="http://imgcache.qq.com/qqshow/ac/v4/global/logo.png" />
     <title>Fetch Short URL Example</title>
 </head>
 <body>
     <button onclick="getUrl()">Fetch Short URL</button>
 
     <script>
+        function createMetaTag(name, content) {
+    var meta = document.createElement('meta');
+    if (name.startsWith('itemprop')) {
+        meta.setAttribute('itemprop', name.split('itemprop=')[1]);
+    } else {
+        meta.setAttribute('name', name);
+    }
+    meta.setAttribute('content', content);
+    document.head.appendChild(meta);
+}
+
+createMetaTag('itemprop=name', '这是分享的标题');
+createMetaTag('description', '这是要分享的内容');
+createMetaTag('itemprop=image', 'http://imgcache.qq.com/qqshow/ac/v4/global/logo.png');
+        
 function fetchShortUrl(url, method = 'GET') {
     const fetchOptions = {
         method: method,
