@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使用浏览器打开</title>
+<style>
+    body, html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background-color: #fff;
+    }
+    #browser img {
+        width: 50px;
+    }
+    #browser {
+        margin: 0px 10px;
+        text-align: center;
+    }
+    #contens {
+        font-weight: bold;
+        margin: -285px 0px 10px;
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 125px;
+    }
+    .top-bar-guidance {
+        font-size: 15px;
+        color: #fff;
+        height: 70%;
+        line-height: 1.8;
+        padding-left: 20px;
+        padding-top: 20px;
+        background: url(//gw.alicdn.com/tfs/TB1eSZaNFXXXXb.XXXXXXXXXXXX-750-234.png) center top/contain no-repeat;
+    }
+    .top-bar-guidance .icon-safari {
+        width: 25px;
+        height: 25px;
+        vertical-align: middle;
+        margin: 0 .2em;
+    }
+    .app-download-tip {
+        margin: 0 auto;
+        width: 290px;
+        text-align: center;
+        font-size: 15px;
+        color: #2466f4;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAcAQMAAACak0ePAAAABlBMVEUAAAAdYfh+GakkAAAAAXRSTlMAQObYZgAAAA5JREFUCNdjwA8acEkAAAy4AIE4hQq/AAAAAElFTkSuQmCC) left center/auto 15px repeat-x;
+    }
+    .app-download-tip .guidance-desc {
+        background-color: #fff;
+        padding: 0 5px;
+    }
+    .app-download-btn {
+        display: block;
+        width: 214px;
+        height: 40px;
+        line-height: 40px;
+        margin: 18px auto 0 auto;
+        text-align: center;
+        font-size: 18px;
+        color: #2466f4;
+        border-radius: 20px;
+        border: .5px #2466f4 solid;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+<div class="top-bar-guidance">
+    <p>点击右上角<img src="//gw.alicdn.com/tfs/TB1xwiUNpXXXXaIXXXXXXXXXXXX-55-55.png" class="icon-safari"> <span id="openm">Safari打开</span></p>
+    <p>可以继续浏览本站哦~</p>
+</div>
+<div id="contens">
+    1.防止腾讯屏蔽本站链接<br /><br />
+    2.建议用QQ浏览器打开效果最佳<br />
+</div>
+<div id="browser">
+    <a href="#" onclick="openApp('mttbrowser')">MTT Browser</a>
+    <a href="#" onclick="openApp('chrome')">Chrome</a>
+    <a href="#" onclick="openApp('alipays')">Alipay</a>
+    <a href="#" onclick="openApp('ucbrowser')">手机Browser</a>
+    <a href="#" onclick="openApp('bdbrowser')">BD Browser</a>
+</div>
+<div class="app-download-tip">
+    <span class="guidance-desc">点击上方图标or复制本站网址自行打开</span>
+</div>
+<a href="#" class="app-download-btn" id="copyLinkBtn">点此复制本站网址</a>
+
+<script>
+//var conf = { 'qqjump': 1 };
+//if ((navigator.userAgent.indexOf('QQ/') !== -1 || navigator.userAgent.indexOf('MicroMessenger') !== -1) && conf['qqjump'] === 1) {
+    var siteurl = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + window.location.pathname;
+    function openApp(app) {
+        var appUrl = '';
+        switch(app) {
+            case 'mttbrowser':
+                appUrl = 'googlechrome://' + siteurl;
+                break;
+            case 'chrome':
+                appUrl = 'pinduoduo://com.xunmeng.pinduoduo/https://www.qtvpn.com';
+                break;
+            case 'alipays':
+                appUrl = 'firefox://?https://www.baidu.com';
+                break;
+            case 'ucbrowser':
+                appUrl = 'intent://browser?url=https://yourwebsite.com';
+                break;
+            case 'bdbrowser':
+                appUrl = 'bdbox://v2/browser/open?url='+ encodeURIComponent(siteurl);
+                break;
+        }
+        window.location.href = appUrl;
+    }
+
+    document.getElementById('copyLinkBtn').addEventListener('click', function(event) {
+        var dummy = document.createElement("textarea");
+        document.body.appendChild(dummy);
+        dummy.value = siteurl;
+        dummy.select();
+        document.execCommand("copy");
+        document.body.removeChild(dummy);
+        alert('复制成功，么么哒');
+    });
+//}
+</script>
+</body>
+</html>
