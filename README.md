@@ -1,4 +1,4 @@
-# QQ微信防红 # 更新日志[](https://fanghong.zeabur.app)
+# QQ微信防红 [更新日志](https://fanghong.zeabur.app)
 
 ## 引言
 
