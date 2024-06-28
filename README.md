@@ -1,6 +1,6 @@
 # QQ微信防红
 
-[更新日志](https://fanghong.zeabur.app)
+当前版本:1.6 [更新日志](https://fanghong.zeabur.app)
 
 ## 引言
 
