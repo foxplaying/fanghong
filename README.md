@@ -1,6 +1,6 @@
 # QQ微信防红
 
-当前版本:1.6 [更新日志](https://github.com/foxplaying/fanghong/blob/main/Update.log.md)
+当前版本:v1.6 [更新日志](https://github.com/foxplaying/fanghong/blob/main/Update.log.md)
 
 ## 引言
 
