@@ -1,4 +1,4 @@
 https://ourls.github.io/open/?url=
 https://ourls.github.io/jump/?url=
-https://urls.zeabur.app/open/?url=
+https://openurl.zeabur.app/?url=
 https://jumping.zeabur.app/?url=
