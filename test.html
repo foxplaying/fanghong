@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch JSON 示例</title>
+</head>
+<body>
+  <h1>获取 JSON 示例</h1>
+
+  <script>
+      fetch('https://sol.jili5.cn/api?act=urlget_user&moban=quwei_fh2_pdf_url&keyQ=194be46af9098ec7f8113285a0d09123&con1=%E7%82%B9%E5%87%BB%E4%B8%8B%E8%BD%BD.%E8%B7%B3%E8%BD%AC%E6%B5%8F%E8%A7%88%E5%99%A8&con2=https%3A%2F%2Fwww.baidu.com', {
+      headers: {
+        'Referer': 'https://fh.jili5.cn'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('url').innerText = data.url; // 将返回的 URL 设置为页面上的文本
+      })
+      .catch(error => console.error('发生错误:', error));
+  </script>
+
+  <p>返回的 URL 是：<span id="url"></span></p>
+</body>
+</html>
