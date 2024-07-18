@@ -1,3 +1,4 @@
+cdn.jsdelivr.net
 fanghong.zeabur.app
 foxplaying.github.io
 openurl.zeabur.app
