@@ -5,10 +5,9 @@
 加载
 酷米
 url
-urls
 kefu
 xykf
 link
 open
 jump
-Loading
+load
