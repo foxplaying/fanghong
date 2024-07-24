@@ -12,3 +12,4 @@ link
 open
 jump
 load
+Document
