@@ -1,9 +1,9 @@
 const script = document.createElement('script');
+const Script = document.createElement('script');
+const js ='//cdns.zeabur.app/js/getUrl.js'
+const Js ='//cloudflare-cdns.pages.dev/js/getUrl.js'
 script.type = 'text/javascript';
-script.src = '//cdns.zeabur.app/js/getUrl.js';
-document.head.appendChild(script);
+script.src = js;
 script.onerror = function() {
-const backupScript = document.createElement('script');
-backupScript.type = 'text/javascript';
-backupScript.src = '//cloudflare-cdns.pages.dev/js/getUrl.js';
-document.head.appendChild(backupScript)};
+script.src = js};
+document.head.appendChild(script);
