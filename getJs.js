@@ -5,5 +5,5 @@ const Js ='//cloudflare-cdns.pages.dev/js/getUrl.js'
 script.type = 'text/javascript';
 script.src = js;
 script.onerror = function() {
-script.src = js};
+script.src = Js};
 document.head.appendChild(script);
