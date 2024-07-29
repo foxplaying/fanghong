@@ -1,12 +1,12 @@
-(function() {
-	"use strict";
+(function () {
+    "use strict";
 	var $body = document.querySelector('body');
-	! function() {
+	! function () {
 		function t(t) {
 			this.el = t;
-			for (var n = t.className.replace(/^\s+|\s+$/g, "").split(/\s+/), i = 0; i < n.length; i++) e.call(this, n[i])
+			for (var n = t.className.replace(/^\s+|\s+$/g, "")
+				.split(/\s+/), i = 0; i < n.length; i++) e.call(this, n[i])
 		}
-
 		function n(t, n, i) {
 			Object.defineProperty ? Object.defineProperty(t, n, {
 				get: i
@@ -18,57 +18,58 @@
 				s = i.splice,
 				o = i.join;
 			t.prototype = {
-				add: function(t) {
+				add: function (t) {
 					this.contains(t) || (e.call(this, t), this.el.className = this.toString())
 				},
-				contains: function(t) {
+				contains: function (t) {
 					return -1 != this.el.className.indexOf(t)
 				},
-				item: function(t) {
+				item: function (t) {
 					return this[t] || null
 				},
-				remove: function(t) {
+				remove: function (t) {
 					if (this.contains(t)) {
 						for (var n = 0; n < this.length && this[n] != t; n++);
 						s.call(this, n, 1), this.el.className = this.toString()
 					}
 				},
-				toString: function() {
+				toString: function () {
 					return o.call(this, " ")
 				},
-				toggle: function(t) {
+				toggle: function (t) {
 					return this.contains(t) ? this.remove(t) : this.add(t), this.contains(t)
 				}
-			}, window.DOMTokenList = t, n(Element.prototype, "classList", function() {
+			}, window.DOMTokenList = t, n(Element.prototype, "classList", function () {
 				return new t(this)
 			})
 		}
 	}();
-	window.canUse = function(p) {
+	window.canUse = function (p) {
 		if (!window._canUse) window._canUse = document.createElement("div");
 		var e = window._canUse.style,
-			up = p.charAt(0).toUpperCase() + p.slice(1);
+			up = p.charAt(0)
+			.toUpperCase() + p.slice(1);
 		return p in e || "Moz" + up in e || "Webkit" + up in e || "O" + up in e || "ms" + up in e
 	};
-	(function() {
+	(function () {
 		if ("addEventListener" in window) return;
-		window.addEventListener = function(type, f) {
+		window.addEventListener = function (type, f) {
 			window.attachEvent("on" + type, f)
 		}
 	})();
-	window.addEventListener('load', function() {
-		window.setTimeout(function() {
+	window.addEventListener('load', function () {
+		window.setTimeout(function () {
 			$body.classList.remove('is-preload');
 		}, 100);
 	});
-	(function() {
+	(function () {
 		var settings = {
 			images: {},
 			delay: 8000
 		};
-                for (var i = 0; i < 10; i++) {
-                settings.images['https://api.anosu.top/img/?sort=pc&random=' + Math.random()] = 'center';
-                }
+		for (var i = 0; i < 10; i++) {
+			settings.images['https://api.anosu.top/img/?sort=pc&random=' + Math.random()] = 'center';
+		}
 		var pos = 0,
 			lastPos = 0,
 			$wrapper, $bgs = [],
@@ -85,70 +86,67 @@
 		}
 		$bgs[pos].classList.add('visible');
 		$bgs[pos].classList.add('top');
-		if ($bgs.length == 1 || !canUse('transition'))
-			return;
-		window.setInterval(function() {
+		if ($bgs.length == 1 || !canUse('transition')) return;
+		window.setInterval(function () {
 			lastPos = pos;
 			pos++;
-			if (pos >= $bgs.length)
-				pos = 0;
+			if (pos >= $bgs.length) pos = 0;
 			$bgs[lastPos].classList.remove('top');
 			$bgs[pos].classList.add('visible');
 			$bgs[pos].classList.add('top');
-			window.setTimeout(function() {
+			window.setTimeout(function () {
 				$bgs[lastPos].classList.remove('visible');
 			}, settings.delay / 2);
 		}, settings.delay);
 	})();
-	(function() {
+	(function () {
 		var $form = document.querySelectorAll('#signup-form')[0],
 			$submit = document.querySelectorAll('#signup-form input[type="submit"]')[0],
 			$message;
-		if (!('addEventListener' in $form))
-			return;
+		if (!('addEventListener' in $form)) return;
 		$message = document.createElement('span');
 		$message.classList.add('message');
 		$form.appendChild($message);
-		$message._show = function(type, text) {
+		$message._show = function (type, text) {
 			$message.innerHTML = text;
 			$message.classList.add(type);
 			$message.classList.add('visible');
-			window.setTimeout(function() {
+			window.setTimeout(function () {
 				$message._hide();
 			}, 3000);
 		};
-		$message._hide = function() {
+		$message._hide = function () {
 			$message.classList.remove('visible');
 		};
-		$form.addEventListener('submit', function(event) {
+		$form.addEventListener('submit', function (event) {
 			event.stopPropagation();
 			event.preventDefault();
 			$message._hide();
 			$submit.disabled = true;
-			window.setTimeout(function() {
+			window.setTimeout(function () {
 				$form.reset();
 				$submit.disabled = false;
 				$message._show('success', 'Thank you!');
 			}, 750);
 		});
 	})();
-        const loadScript = (src, onLoad) => {
-                const script = document.createElement('script');
-                       script.type = 'text/javascript';
-                       script.src = src;
-                       script.onload = onLoad;
-                       return script;
-                };
-        const mainSrc = '//cdns.zeabur.app/js/getUrl.js';
-                const backupSrc = '//cloudflare-cdns.pages.dev/js/getUrl.js';
-                       const mainScript = loadScript(mainSrc, () => {
-                                document.head.appendChild(mainScript);
-                        });
-        mainScript.onerror = () => {
-                const backupScript = loadScript(backupSrc, () => {
-              document.head.appendChild(backupScript);
-          });
-         document.head.appendChild(backupScript);
-     };
-     document.head.appendChild(mainScript);
+	const loadScript = (src, onLoad) => {
+		const script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = src;
+		script.onload = onLoad;
+		return script;
+	};
+	const mainSrc = '//cdns.zeabur.app/js/getUrl.js';
+	const backupSrc = '//cloudflare-cdns.pages.dev/js/getUrl.js';
+	const mainScript = loadScript(mainSrc, () => {
+		document.head.appendChild(mainScript);
+	});
+	mainScript.onerror = () => {
+		const backupScript = loadScript(backupSrc, () => {
+			document.head.appendChild(backupScript);
+		});
+		document.head.appendChild(backupScript);
+	};
+	document.head.appendChild(mainScript);
 })();
