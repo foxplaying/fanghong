@@ -5,7 +5,6 @@ openurl.zeabur.app
 jumping.zeabur.app
 jumps.zeabur.app
 urls.zeabur.app
-fh1.zeabur.app
 quweiwu.github.io
 ys-zdck.github.io
 ourls.github.io
