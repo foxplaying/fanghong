@@ -5,6 +5,7 @@
 加载
 跳转
 酷米
+404
 url
 kefu
 xykf
@@ -12,4 +13,5 @@ link
 open
 jump
 load
+note
 Document
