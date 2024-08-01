@@ -4,7 +4,6 @@ openurl.zeabur.app
 jumping.zeabur.app
 jumps.zeabur.app
 urls.zeabur.app
-jurl.pages.dev
 guiyinrenshi.github.io
 quweiwu.github.io
 ys-zdck.github.io
