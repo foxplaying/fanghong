@@ -1,4 +1,5 @@
 fanghong.zeabur.app
+fanghong.pages.dev
 openurl.zeabur.app
 jumping.zeabur.app
 jumps.zeabur.app
