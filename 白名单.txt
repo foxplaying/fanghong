@@ -1,5 +1,6 @@
 fanghong.zeabur.app
 fanghong.pages.dev
+pages.dev
 zeabur.app
 github.io
 jili5.cn
