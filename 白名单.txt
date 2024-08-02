@@ -1,11 +1,5 @@
 fanghong.zeabur.app
 fanghong.pages.dev
-openurl.zeabur.app
-jumping.zeabur.app
-jumps.zeabur.app
-urls.zeabur.app
-guiyinrenshi.github.io
-quweiwu.github.io
-ys-zdck.github.io
-ourls.github.io
-wmk.jili5.cn
+zeabur.app
+github.io
+jili5.cn
