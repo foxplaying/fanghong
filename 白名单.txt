@@ -1,6 +1,7 @@
 fanghong.zeabur.app
 fanghong.pages.dev
-pages.dev
+netlify.app
 zeabur.app
 github.io
+pages.dev
 jili5.cn
