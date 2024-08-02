@@ -25,8 +25,7 @@
 <form id="signup-form" method="post">
 <input type="url" name="targetUrl" id="targetUrl" placeholder="需要生成的网址" onkeydown="handleKeyDown(event)"/>
 <select name="type" class="btn-default form-control" style="width: auto;cursor:pointer" title="点击选择生成类型" id="type">
-<option fh_url="http://example.com/QT_JUMP" onchange="window.location.href=this.getAttribute('fh_url');">通用一次性防红接口</option>
-<option value="QT_OPEN">微信/QQ直链打开(国内)</option><option value="QT_JUMP">微信/QQ跳浏览器(国内)</option><option value="2">微信/支付宝直链打开(国外)</option><option value="3">微信/支付宝跳浏览器(国外)</option><option value="4">网址转二维码在线生成</option><option value="Custom">定制防红请进群申请</option>
+<option value="QT_OPEN">微信/QQ直链打开(国内)</option><option value="QT_JUMP">微信/QQ跳浏览器(国内)</option><option value="2">微信/支付宝直链打开(国外)</option><option value="3">微信/支付宝跳浏览器(国外)</option><option value="4">网址转二维码在线生成</option><option fh_url="http://example.com/QT_JUMP" onchange="window.location.href=this.getAttribute('fh_url');">通用一次性防红接口</option><option value="Custom">定制防红请进群申请</option>
 <input type="button" id="button" value="生成" onclick="getUrl()" />
 </form>
 <div style="display: flex;align-items: center;">
