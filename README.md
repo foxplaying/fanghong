@@ -6,7 +6,7 @@
 
 利用`zeabur.app`做的防红链接，禁止生成非法网站，违反后果自行承担。
 
-强烈推荐用Github和cloudflare的pages功能和以下托管平台自建防红 
+强烈推荐用Github和cloudflare的pages功能和以下托管平台域名自建防红 
 
 Github防红html下载地址(open是直链，jump是跳转) 
 
