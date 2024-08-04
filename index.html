@@ -24,7 +24,7 @@
 </header>
 <form id="signup-form" method="post">
 <input type="url" name="targetUrl" id="targetUrl" placeholder="需要生成的网址" onkeydown="handleKeyDown(event)"/>
-<select name="type" class="btn-default form-control" style="width: auto; cursor: pointer;" title="点击选择生成接口" id="type" onchange="var url=this.options[this.selectedIndex].getAttribute('fh_url'); if(url){var fhLink = document.createElement('a');fhLink.href = url;fhLink.textContent = url;document.getElementById('generatedUrl').textContent = '';document.getElementById('generatedUrl').appendChild(fhLink);window.location.href=url;}">
+<select name="type" class="btn-default form-control" style="width: auto; cursor: pointer;" title="点击选择生成接口" id="type" onchange="var url=this.options[this.selectedIndex].getAttribute('fh_url'); if(url){var fhLink = document.createElement('a');fhLink.href = url;fhLink.textContent = '点击跳转生成页';document.getElementById('generatedUrl').textContent = '';document.getElementById('generatedUrl').appendChild(fhLink);window.location.href=url;}">
 <option>选择接口...</option>
 <option fh_url="http://fh.cccv.work">通用一次性防红接口</option>
 <option value="QT_OPEN">微信/QQ直链打开(国内)</option>
