@@ -9,6 +9,7 @@
 写真
 付款
 支付
+php
 pay
 404
 403
@@ -16,8 +17,16 @@ pay
 302
 cos
 oss
+svg
 url
 yun
+png
+gif
+mp4
+mp3
+xml
+htm
+html
 kefu
 xykf
 link
@@ -25,6 +34,8 @@ open
 jump
 load
 note
+jpeg
 cloud
 Error
+group
 Document
