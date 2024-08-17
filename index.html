@@ -27,8 +27,8 @@
 <select name="type" class="btn-default form-control" style="width: auto; cursor: pointer;" title="点击选择生成接口" id="type" onchange="var url=this.options[this.selectedIndex].getAttribute('fh_url'); if(url){var fhLink = document.createElement('a');fhLink.href = url;fhLink.textContent = '点击跳转生成页';document.getElementById('generatedUrl').textContent = '';document.getElementById('generatedUrl').appendChild(fhLink);window.location.href=url;}">
 <option>选择接口...</option>
 <option fh_url="http://fh.cccv.work">通用一次性防红接口</option>
-<option value="QT_OPEN">微信/QQ直链打开(国内)</option>
-<option value="QT_JUMP">微信/QQ跳浏览器(国内)</option>
+<option value="QT_OPEN">QQ直链打开(国内)</option>
+<option value="QT_JUMP">QQ跳浏览器(国内)</option>
 <option value="2">微信/支付宝直链打开(国外)</option>
 <option value="3">微信/支付宝跳浏览器(国外)</option>
 <option value="4">网址转二维码在线生成</option>
