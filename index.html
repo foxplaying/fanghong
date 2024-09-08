@@ -15,9 +15,9 @@
 <div style="margin: 0; padding: 0;">
 <p style="margin: 0; padding: 0;">
 在下方输入需要跳转的链接，即可生成防红接口。<br>
-复制下方生成的链接，粘贴到微信或者QQ即可。</p>
+复制下方生成的链接，粘贴即可。</p>
 <p style="margin: 0; padding: 0;font-size: 14px;">
-(直链打开可解决QQ提示非官方页面问题)</p>
+(直链打开可解决链接被拦截等问题)</p>
 <p style="margin: 0; padding: 0;font-size: 14px;">
 (请勿生成<a href="//urlsec.qq.com/eviltype.html" target="_blank">非法内容</a>，否则后果自负&nbsp;用户反馈群:<a id="Link">598393246</a>)</p></div>
 </div>
@@ -26,7 +26,7 @@
 <input type="url" name="targetUrl" id="targetUrl" placeholder="需要生成的网址" onkeydown="handleKeyDown(event)"/>
 <select name="type" class="btn-default form-control" style="width: auto; cursor: pointer;" title="点击选择生成接口" id="type" onchange="var url=this.options[this.selectedIndex].getAttribute('fh_url'); if(url){var fhLink = document.createElement('a');fhLink.href = url;fhLink.textContent = '点击跳转生成页';document.getElementById('generatedUrl').textContent = '';document.getElementById('generatedUrl').appendChild(fhLink);window.location.href=url;}">
 <option>选择接口...</option>
-<option fh_url="http://fh.cccv.work">通用一次性防红接口</option>
+<option fh_url="http://fh.cccv.work">一次性防红链接生成(全平台通用)</option>
 <option value="2">微信/支付宝直链打开(免备案)</option>
 <option value="3">微信/支付宝跳浏览器(免备案)</option>
 <option value="4">网址转二维码在线生成</option>
