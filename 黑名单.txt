@@ -16,6 +16,7 @@ pay
 403
 301
 302
+apk
 cos
 oss
 svg
