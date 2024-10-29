@@ -6,3 +6,4 @@ zeabur.app
 github.io
 pages.dev
 jili5.cn
+huizohome.com
