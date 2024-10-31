@@ -24,10 +24,11 @@
 </header>
 <form id="signup-form" method="post">
 <input type="url" name="targetUrl" id="targetUrl" placeholder="需要生成的网址" onkeydown="handleKeyDown(event)"/>
-<select name="type" class="btn-default form-control" style="width: auto; cursor: pointer;" title="点击选择生成接口" id="type">
+<select name="type" class="btn-default form-control" style="width: auto; cursor: pointer;" title="点击选择生成接口" id="type" onchange="var url=this.options[this.selectedIndex].getAttribute('fh_url'); if(url){var fhLink = document.createElement('a');fhLink.href = url;fhLink.textContent = '点击跳转生成页';document.getElementById('generatedUrl').textContent = '';document.getElementById('generatedUrl').appendChild(fhLink);window.location.href=url;}">
 <option>选择接口...</option>
-<option value="0">微信/支付宝直链打开(测试接口)</option>
-<option value="1">微信/支付宝跳浏览器(测试接口)</option>
+<option value="0">(测试接口)微信/支付宝直链打开</option>
+<option value="1">(测试接口)微信/支付宝跳浏览器</option>
+<option fh_url="http://fh.jili5.cn">(友情链接)吉利屋科技在线防红</option>
 <option value="QR">网址转二维码在线生成</option>
 <option value="Custom">定制防红请进群申请</option>
 </select>
