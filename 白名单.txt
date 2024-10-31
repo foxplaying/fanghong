@@ -1,6 +1,5 @@
 fanghong.zeabur.app
 fanghong.pages.dev
-fh.cccv.work
 netlify.app
 zeabur.app
 github.io
