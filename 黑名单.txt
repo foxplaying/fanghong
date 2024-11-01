@@ -1,8 +1,4 @@
 @
 ?
-id
 url
 link
-load
-open
-jump
