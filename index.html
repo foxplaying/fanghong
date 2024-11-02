@@ -24,6 +24,7 @@
 </header>
 <form id="signup-form" method="post">
 <input type="url" name="targetUrl" id="targetUrl" placeholder="需要生成的网址" onkeydown="handleKeyDown(event)"/>
+<div id="container">
     <select name="type" class="btn-default form-control" title="点击选择生成接口" id="type" onchange="redirectUrl.call(this)">
         <option>选择接口...</option>
         <option value="0">(测试接口)微信/支付宝直链打开</option>
@@ -32,6 +33,7 @@
         <option value="QR">网址转二维码在线生成</option>
         <option fh_Group>点击加入反馈群</option>
     </select>
+</div>
 <input type="button" id="button" value="生成" onclick="getUrl()">
 </form>
 <div style="display: flex;align-items: center;">
