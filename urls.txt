@@ -1,5 +1,5 @@
-禁止域名包含路径
 https://crm.huizohome.com/huiyoufuserver/Public/js/editor/attached/file/20241112/20241112060510_33145.html?https://qm.qq.com/cgi-bin/qm/qr?url=
 https://crm.huizohome.com/huiyoufuserver/Public/js/editor/attached/file/20241106/20241106132526_28056.html?https://qm.qq.com/cgi-bin/qm/qr?url=
 https://open-url.zeabur.app/?https://qm.qq.com/cgi-bin/qm/qr?url=
 https://jump-urls.zeabur.app/?https://qm.qq.com/cgi-bin/qm/qr?url=
+禁止域名包含路径
