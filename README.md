@@ -17,7 +17,7 @@ https://github.com/ourls/ourls.github.io
 
 github.io，pages.dev，zeabur.app，netlify.app 
 
-## 演示网站
+## 演示网址
 
 进入该网址：[fanghong.zeabur.app](https://fanghong.zeabur.app)
 
