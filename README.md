@@ -8,6 +8,7 @@
 
 强烈推荐用Github和cloudflare的pages功能和以下托管平台域名自建防红 
 
+## 此仓库为展示页，功能页如下
 Github防红html下载地址(open是直链，jump是跳转) 
 
 https://github.com/ourls/ourls.github.io 
