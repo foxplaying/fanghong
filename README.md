@@ -14,7 +14,7 @@
 ## 此仓库为展示页，功能页如下
 Github防红html下载地址(open是直链，jump是跳转) 
 
-https://github.com/ourls/ourls.github.io 
+https://github.com/foxplaying/ourls
 
 白名单自动通过域名: 
 
