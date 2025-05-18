@@ -2,6 +2,9 @@
 
 当前版本:v1.6 [更新日志](https://github.com/foxplaying/fanghong/blob/main/Update.log.md)(已永远停止维护)
 
+## 预览图
+![image](https://github.com/user-attachments/assets/1eed90ba-3272-430c-9cfc-6a848924551d)
+
 ## 引言
 
 利用`zeabur.app`做的防红链接，禁止生成非法网站，违反后果自行承担。
