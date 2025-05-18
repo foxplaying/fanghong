@@ -20,6 +20,10 @@ https://github.com/ourls/ourls.github.io
 
 github.io，pages.dev，zeabur.app，netlify.app 
 
+调用方法：
+
+http://自定义前缀.以上域名/(open/jump)/?url=你的网址
+
 ## 演示网址
 
 进入该网址：[fanghong.pages.dev](https://fanghong.pages.dev)
