@@ -22,6 +22,6 @@ github.io，pages.dev，zeabur.app，netlify.app
 
 ## 演示网址
 
-进入该网址：[fanghong.zeabur.app](https://fanghong.zeabur.app)
+进入该网址：[fanghong.pages.dev](https://fanghong.pages.dev)
 
 已永久停止更新
