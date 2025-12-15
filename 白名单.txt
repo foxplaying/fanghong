@@ -5,3 +5,4 @@ netlify.app
 zeabur.app
 github.io
 pages.dev
+cdntips.net
